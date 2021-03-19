@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="weather.js" defer></script>
+
+  </head>
+
+  <body>
+    <div class="pageContent">
+      <div class="header">
+        <h1 id="placeTempHead">please enable Javascript to view data</h1>
+        <h2><span class="tempValue" id="currentTemp">Temperature</span><span class="degreeUnit">°F</span></h2>
+        <h2>
+          <span class="tempValue" id="highCurrent">Temperature</span>
+          <span class="degreeUnit">°F</span>
+           /
+           <span class="low tempValue" id="lowCurrent">Temperature</span>
+           <span class="degreeUnit">°F</span>
+         </h2>
+      </div>
+
+      <div class="AllDays">
+
+        <div class="day">
+          <h3 id="tomorrowTitle">Tomorrow</h3>
+          <h4 class="tempFraction">
+          <span class="high tempValue" id="tomorrowHigh">Temperature</span>
+          <span class="degreeUnit">°F</span>
+           /
+           <span class="low tempValue" id="tomorrowLow">Temperature</span>
+           <span class="degreeUnit">°F</span></h4>
+        </div>
+
+        <div class="day">
+          <h3 id="twoDayTitle">Two Days</h3>
+          <h4 class="tempFraction">
+            <span class="high tempValue" id="twoDayHigh">Temperature</span>
+            <span class="degreeUnit">°F</span>
+             /
+             <span class="low tempValue" id="twoDayLow">Temperature</span>
+             <span class="degreeUnit">°F</span></h4>
+          </h4>
+        </div>
+
+        <div class="day">
+          <h3 id="threeDayTitle">Three Days</h3>
+          <h4 class="tempFraction">
+            <span class="high tempValue" id="threeDayHigh">Temperature</span>
+            <span class="degreeUnit">°F</span>
+             /
+             <span class="low tempValue" id="threeDayLow">Temperature</span>
+             <span class="degreeUnit">°F</span></h4>
+          </h4>
+        </div>
+
+      </div>
+
+
+      <button type="button" name="button" id="changeCity">Change City</button>
+      <button type="button" name="button" id="changeUnits" onclick="changeUnits()">Change Units</button>
+    </div>
+
+    <div id="cityModal" class="modal" onclick="closeModal()">
+      <div class="modalContent">
+        <span id="cityArray"></span>
+        <form class="newCity safe" action="addCity(formContent)" method="get">
+          <input type="text" class="safe" id="formContent" placeholder="Please enter city name" style="display: inline-block;float:left;">
+          <input type="submit" class="safe" value="Add City">
+        </form>
+      </div>
+      <span></span>
+    </div>
+    <img src="cloud.png" alt="cloud" class="cloud" id="cloud1">
+
+  </body>
+</html>
